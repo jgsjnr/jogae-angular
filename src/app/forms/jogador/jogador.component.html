@@ -1,0 +1,45 @@
+
+<div *ngIf="jogador$ | async as jogador; else loading">
+  <mat-card>
+<table mat-table [dataSource]="jogador" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    
+    <ng-container matColumnDef="nmNick">
+      <th mat-header-cell *matHeaderCellDef> Nick </th>
+      <td mat-cell *matCellDef="let jogador"> {{jogador.nmNick}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="vlJogador">
+      <th mat-header-cell *matHeaderCellDef> Valor </th>
+      <td mat-cell *matCellDef="let jogador"> {{jogador.vlJogador}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="rankJogador">
+      <th mat-header-cell *matHeaderCellDef> Rank </th>
+      <td mat-cell *matCellDef="let jogador"> {{jogador.rankJogador}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>
+        <button mat-flat-button color="primary" (click)="onAdd()">Adicionar</button>
+        <button mat-flat-button color="accent" (click)="onEdit()">Editar</button>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let jogador">
+        <button mat-flat-button color="warn" (click)="onDelete(jogador.nmNick)">Excluir</button>
+      </mat-cell>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>
+  </div>
+<ng-template #loading>
+    <mat-spinner></mat-spinner>
+</ng-template>

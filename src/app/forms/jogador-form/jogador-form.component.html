@@ -1,0 +1,35 @@
+<mat-card>
+    <mat-toolbar>
+        Adicionar Usuario
+    </mat-toolbar>
+    <mat-card-content>
+        <form [formGroup]="form">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Nick</mat-label>
+                <input matInput placeholder="Nick" formControlName="nmNick">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Valor</mat-label>
+                <input matInput placeholder="Valor" formControlName="vlJogador">
+            </mat-form-field>
+            <!-- <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Rank</mat-label>
+                <input matInput placeholder="Rank" formControlName="rankJogador">
+            </mat-form-field> -->
+            <mat-form-field class="full-width">
+                <mat-label>Rank do jogador</mat-label>
+                <mat-select formControlName="rankJogador">
+                    <mat-option value="0">Iniciante</mat-option>
+                    <mat-option value="1"> Intermediario</mat-option>
+                    <mat-option value="2"> Pro-player</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="onSubmit()">Enviar</button>
+        <button mat-raised-button color="accent" (click)="onUpdate()">Atualizar</button>
+        <button mat-raised-button color="warn" (click)="onCancel()">Cancelar</button>
+    </mat-card-actions>
+
+</mat-card>
