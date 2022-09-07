@@ -8,7 +8,7 @@ import { Jogador } from '../model/jogador';
   providedIn: 'root'
 })
 export class JogadorService {
-  private readonly API: string = 'http://152.67.44.32:8080/jogae/jogador'
+  private readonly API: string = 'http://152.67.44.32:8080/jogae/jogador/'
   constructor(private httpClient: HttpClient) { 
   }
   findAll(){
