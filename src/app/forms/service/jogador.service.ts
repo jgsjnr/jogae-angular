@@ -8,7 +8,7 @@ import { Jogador } from '../model/jogador';
   providedIn: 'root'
 })
 export class JogadorService {
-  private readonly API: string = '/jogae/jogador'
+  private readonly API: string = '/jogador'
   constructor(private httpClient: HttpClient) { 
   }
   findAll(){

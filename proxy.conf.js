@@ -1,6 +1,6 @@
 const PROXY_CONFIG = [
     {
-        context: ['/'],
+        context: ['/jogae'],
         target: 'http://152.67.44.32:8080/',
         secure: false,
         loglevel: 'debug'
